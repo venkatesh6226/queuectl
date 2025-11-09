@@ -1,0 +1,15 @@
+{
+  "name": "queuectl",
+  "version": "1.0.0",
+  "main": "queuectl.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "queue": "node queuectl.js",
+    "api": "node web-api.js"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "sqlite3": "^5.1.7"
+  }
+}
