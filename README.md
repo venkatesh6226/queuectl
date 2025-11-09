@@ -77,7 +77,7 @@ This exposes endpoints to interact with the queue system programmatically or fro
 ### **Enqueue a new job**
 
 ```bash
-node cli.js enqueue '{"id":"job1","command":"echo hello","priority":1}'
+node queuectl.js enqueue '{"id":"job1","command":"echo hello","priority":1}'
 ```
 
 **Output:**
@@ -89,7 +89,7 @@ Enqueued job: job1
 ### **List jobs by state**
 
 ```bash
-node cli.js list pending
+node queuectl.js list pending
 ```
 
 **Output:**
@@ -101,7 +101,7 @@ job1 | pending | tries 0/3 | priority 1 | cmd: echo hello | created_at: ... | up
 ### **Check queue status**
 
 ```bash
-node cli.js status
+node queuectl.js status
 ```
 
 **Output:**
@@ -114,7 +114,7 @@ Active workers (approx): 0
 ### **View Dead Letter Queue (DLQ)**
 
 ```bash
-node cli.js dlq
+node queuectl.js dlq
 ```
 
 **Output:**
@@ -126,7 +126,7 @@ job9 | attempts 3/3 | cmd: fail.sh | last_error: Command failed: fail.sh
 ### **Retry a failed job**
 
 ```bash
-node cli.js retry job9
+node queuectl.js retry job9
 ```
 
 **Output:**
@@ -243,14 +243,14 @@ node db.js
 ### **2️⃣ Enqueue test jobs**
 
 ```bash
-node cli.js enqueue '{"id":"job1","command":"echo hello"}'
-node cli.js enqueue '{"id":"job2","command":"sleep 2 && echo done"}'
+node queuectl.js enqueue '{"id":"job1","command":"echo hello"}'
+node queuectl.js enqueue '{"id":"job2","command":"sleep 2 && echo done"}'
 ```
 
 ### **3️⃣ Start worker**
 
 ```bash
-node cli.js start 2
+node queuectl.js start 2
 ```
 
 ### **4️⃣ Check Dashboard**
