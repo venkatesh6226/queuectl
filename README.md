@@ -89,7 +89,7 @@ Enqueued job: job1
 ### **List jobs by state**
 
 ```bash
-node queuectl.js list pending
+node queuectl.js list --state pending
 ```
 
 **Output:**
@@ -108,13 +108,13 @@ node queuectl.js status
 
 ```
 Jobs: pending=1, processing=0, completed=0, dead=0
-Active workers (approx): 0
+Active workers: 0
 ```
 
 ### **View Dead Letter Queue (DLQ)**
 
 ```bash
-node queuectl.js dlq
+node queuectl.js dlq:list
 ```
 
 **Output:**
@@ -126,7 +126,7 @@ job9 | attempts 3/3 | cmd: fail.sh | last_error: Command failed: fail.sh
 ### **Retry a failed job**
 
 ```bash
-node queuectl.js retry job9
+node queuectl.js dlq:retry job9
 ```
 
 **Output:**
